@@ -32,14 +32,17 @@ mamba install -n $conda_env_name \
 
 # Install this repo as a package
 mamba activate $conda_env_name
+git clone https://github.com/korayaykor/goat-bench.git
+cd goat-bench
 pip install -e .
 
 # Install habitat-lab
-git clone --branch v0.2.3 git@github.com:facebookresearch/habitat-lab.git
+git clone --branch v0.2.3 git@github.com:facebookresearch/habitat-lab.git or git clone --branch v0.2.3 https://github.com/facebookresearch/habitat-lab.git
 cd habitat-lab
 pip install -e habitat-lab
 pip install -e habitat-baselines
 
+cd goat-bench
 pip install -r requirements.txt
 pip install git+https://github.com/openai/CLIP.git
 pip install ftfy regex tqdm GPUtil trimesh seaborn timm scikit-learn einops transformers
